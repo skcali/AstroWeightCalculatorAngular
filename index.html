@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Planet Weight Calculator</title>
+</head>
+<body>
+  <header>See how much you weight on a planet in our solar system!</header>
+  <br>
+  <div ng-app="AstroWeightCalculator">
+    <div ng-controller="weightCalc as weightCalc">
+      <input ng-model="weightCalc.weight" type="number" />
+      <select ng-model="weightCalc.gravity" ng-options="planets[1] as planets[0] for planets in weightCalc.planets"></select>
+      <button ng-click="sumFinal = weightCalc.doMath(weightCalc.weight, weightCalc.gravity)">do math</button><br>
+      <p>You would weight {{sumFinal}}!</p>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
